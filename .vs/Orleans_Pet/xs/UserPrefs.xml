@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{6456D17D-592C-4D2D-A33B-10E25910D406}|Default">
+  <MonoDevelop.Ide.ItemProperties.Orleans__Pet PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Orleans_Pet/Program.cs">
+    <Files>
+      <File FileName="Orleans_Pet/Program.cs" Line="36" Column="1" />
+      <File FileName="Orleans_Pet/HelloWorldGrain.cs" />
+      <File FileName="Orleans_Pet/Startup.cs" />
+      <File FileName="docker-compose.yml" />
+      <File FileName="Orleans_Pet/Controllers/HelloWorldController.cs" />
+      <File FileName="Orleans_Pet/appsettings.json" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Orleans_Pet" expanded="True">
+            <Node name="Solution Items" expanded="True" />
+            <Node name="Orleans_Pet" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>Or/Or.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/Controllers/HelloWorldController.cs" relfile="Orleans_Pet/Controllers/HelloWorldController.cs" line="25" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
