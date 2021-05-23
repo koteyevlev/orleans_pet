@@ -1,2 +1,2 @@
-# orleans_pet
+# Orleans
 Pet project on virtual actor model - Orleans
