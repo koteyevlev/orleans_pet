@@ -4,25 +4,24 @@ using Orleans;
 
 namespace Orleans_Pet
 {
-    public interface IHelloWorldGrain: IGrainWithStringKey
-    {
-        Task<string> SayHelloAsync(string name);
-    }
-
-
     public class HelloWorldGrain : Grain<HelloState>, IHelloWorldGrain
     {
+        private IDisposable _timer;
         public async Task<string> SayHelloAsync(string name)
         {
             var count = State.InvokationCount++;
             await WriteStateAsync();
             return $"Hello {name} from {this.GetPrimaryKeyString()} - I've said hell {count++}";
         }
-    }
 
-    public class HelloState
-    {
-        public int InvokationCount { get; set; }
+        public override Task OnActivateAsync()
+        {
+            _timer = RegisterTimer(state =>
+            {
+                Console.WriteLine("Timer is activated");
+                return Task.CompletedTask;
+            }, null, TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(1));
+            return base.OnActivateAsync();
+        }
     }
-
 }

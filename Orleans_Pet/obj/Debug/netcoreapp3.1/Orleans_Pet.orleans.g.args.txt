@@ -5,8 +5,14 @@ AssemblyName:Orleans_Pet
 OutputType:Exe
 TargetPath:/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/bin/Debug/netcoreapp3.1/Orleans_Pet.dll
 CodeGenOutputFile:/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/obj/Debug/netcoreapp3.1/Orleans_Pet.orleans.g.cs
+Compile:/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/CallFilter/ConsoleWritingIncomingCallFilter.cs
+Compile:/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/CallFilter/ConsoleWritingOutgoingCallFilter.cs
 Compile:/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/Controllers/HelloWorldController.cs
+Compile:/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/HelloState.cs
 Compile:/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/HelloWorldGrain.cs
+Compile:/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/IHelloWorldGrain.cs
+Compile:/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/IMyStatelessWorker.cs
+Compile:/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/MyStatelessWorker.cs
 Compile:/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/Pages/Error.cshtml.cs
 Compile:/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/Pages/Index.cshtml.cs
 Compile:/Users/a185583357/Projects/Orleans_Pet/Orleans_Pet/Pages/Privacy.cshtml.cs
@@ -308,4 +314,4 @@ Reference:/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/3.1.0/ref/netc
 Reference:/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/3.1.0/ref/netcoreapp3.1/System.Xml.XPath.XDocument.dll
 Reference:/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/3.1.0/ref/netcoreapp3.1/WindowsBase.dll
 DefineConstants:TRACE,DEBUG,NETCOREAPP,NETCOREAPP3_1,
-InputHash:62827e6045e504bd2dca3ee20620b9e67be64490
+InputHash:2c702d831f218937171d90a16cae089cef388254

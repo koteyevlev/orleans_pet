@@ -9,7 +9,7 @@ services:
         ports:
           - "4556:4556"
         environment:
-          - SERVICES=dynamodb
+          - SERVICES=postgresql
           - HOSTNAME=localstack
           - AWS_DEFAULT_REGION=eu-west-1
           - AWS_ACCESS_KEY_ID=xx

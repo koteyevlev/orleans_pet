@@ -99,6 +99,92 @@ namespace Orleans_Pet
             return base.InvokeMethodAsync<string>((int)0x4A778B79, new object[]{name0});
         }
     }
+
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("OrleansCodeGen", "2.0.0.0"), global::Orleans.CodeGeneration.MethodInvokerAttribute(typeof(global::Orleans_Pet.IMyStatelessWorker), (int)0x66B26B25), global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute]
+    internal class OrleansCodeGenMyStatelessWorkerMethodInvoker : global::Orleans.CodeGeneration.IGrainMethodInvoker
+    {
+        public async global::System.Threading.Tasks.Task<object> Invoke(global::Orleans.Runtime.IAddressable grain, global::Orleans.CodeGeneration.InvokeMethodRequest request)
+        {
+            int interfaceId = request.InterfaceId;
+            int methodId = request.MethodId;
+            var arguments = request.Arguments;
+            switch (interfaceId)
+            {
+                case (int)0x66B26B25:
+                {
+                    var casted = ((global::Orleans_Pet.IMyStatelessWorker)grain);
+                    switch (methodId)
+                    {
+                        case (int)0x1FAF8489:
+                            return await casted.ComputeNextNumberAsync();
+                        default:
+                            ThrowMethodNotImplemented(interfaceId, methodId);
+                            return null;
+                    }
+                }
+
+                default:
+                    ThrowInterfaceNotImplemented(interfaceId);
+                    return null;
+            }
+
+            void ThrowInterfaceNotImplemented(int i) => throw new global::System.NotImplementedException($"InterfaceId: 0x{i:X}");
+            void ThrowMethodNotImplemented(int i, int m) => throw new global::System.NotImplementedException($"InterfaceId: 0x{i:X}, MethodId: 0x{m:X}");
+        }
+
+        public int InterfaceId => (int)0x66B26B25;
+        public ushort InterfaceVersion => 0;
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("OrleansCodeGen", "2.0.0.0"), global::System.SerializableAttribute, global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute, global::Orleans.CodeGeneration.GrainReferenceAttribute(typeof(global::Orleans_Pet.IMyStatelessWorker))]
+    internal class OrleansCodeGenMyStatelessWorkerReference : global::Orleans.Runtime.GrainReference, global::Orleans_Pet.IMyStatelessWorker
+    {
+        OrleansCodeGenMyStatelessWorkerReference(global::Orleans.Runtime.GrainReference other): base(other)
+        {
+        }
+
+        OrleansCodeGenMyStatelessWorkerReference(global::Orleans.Runtime.GrainReference other, global::Orleans.CodeGeneration.InvokeMethodOptions invokeMethodOptions): base(other, invokeMethodOptions)
+        {
+        }
+
+        OrleansCodeGenMyStatelessWorkerReference(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context): base(info, context)
+        {
+        }
+
+        public override int InterfaceId => (int)0x66B26B25;
+        public override ushort InterfaceVersion => 0;
+        public override string InterfaceName => "IMyStatelessWorker";
+        public override bool IsCompatible(int interfaceId) => interfaceId == (int)0x66B26B25;
+        public override string GetMethodName(int interfaceId, int methodId)
+        {
+            switch (interfaceId)
+            {
+                case (int)0x66B26B25:
+                {
+                    switch (methodId)
+                    {
+                        case (int)0x1FAF8489:
+                            return "ComputeNextNumberAsync";
+                        default:
+                            ThrowMethodNotImplemented(interfaceId, methodId);
+                            return null;
+                    }
+                }
+
+                default:
+                    ThrowInterfaceNotImplemented(interfaceId);
+                    return null;
+            }
+
+            void ThrowInterfaceNotImplemented(int i) => throw new global::System.NotImplementedException($"InterfaceId: 0x{i:X}");
+            void ThrowMethodNotImplemented(int i, int m) => throw new global::System.NotImplementedException($"InterfaceId: 0x{i:X}, MethodId: 0x{m:X}");
+        }
+
+        global::System.Threading.Tasks.Task<double> global::Orleans_Pet.IMyStatelessWorker.ComputeNextNumberAsync()
+        {
+            return base.InvokeMethodAsync<double>((int)0x1FAF8489, null);
+        }
+    }
 }
 
 namespace OrleansGeneratedCode
@@ -109,21 +195,27 @@ namespace OrleansGeneratedCode
         public void Populate(global::Orleans.Metadata.GrainInterfaceFeature feature)
         {
             feature.Interfaces.Add(new global::Orleans.Metadata.GrainInterfaceMetadata(typeof(global::Orleans_Pet.IHelloWorldGrain), typeof(Orleans_Pet.OrleansCodeGenHelloWorldGrainReference), typeof(Orleans_Pet.OrleansCodeGenHelloWorldGrainMethodInvoker), (int)0x711411C3));
+            feature.Interfaces.Add(new global::Orleans.Metadata.GrainInterfaceMetadata(typeof(global::Orleans_Pet.IMyStatelessWorker), typeof(Orleans_Pet.OrleansCodeGenMyStatelessWorkerReference), typeof(Orleans_Pet.OrleansCodeGenMyStatelessWorkerMethodInvoker), (int)0x66B26B25));
         }
 
         public void Populate(global::Orleans.Metadata.GrainClassFeature feature)
         {
             feature.Classes.Add(new global::Orleans.Metadata.GrainClassMetadata(typeof(global::Orleans_Pet.HelloWorldGrain)));
+            feature.Classes.Add(new global::Orleans.Metadata.GrainClassMetadata(typeof(global::Orleans_Pet.MyStatelessWorker)));
         }
 
         public void Populate(global::Orleans.Serialization.SerializerFeature feature)
         {
             feature.AddKnownType("Orleans_Pet.HelloWorldGrain,Orleans_Pet", "Orleans_Pet.HelloWorldGrain");
+            feature.AddKnownType("Orleans_Pet.MyStatelessWorker,Orleans_Pet", "Orleans_Pet.MyStatelessWorker");
+            feature.AddKnownType("Orleans_Pet.CallFilter.ConsoleWritingIncomingCallFilter,Orleans_Pet", "Orleans_Pet.CallFilter.ConsoleWritingIncomingCallFilter");
+            feature.AddKnownType("Orleans_Pet.CallFilter.ConsoleWritingOutgoingCallFilter,Orleans_Pet", "Orleans_Pet.CallFilter.ConsoleWritingOutgoingCallFilter");
             feature.AddKnownType("Orleans_Pet.HelloWorldController,Orleans_Pet", "Orleans_Pet.HelloWorldController");
+            feature.AddKnownType("Orleans_Pet.HelloState,Orleans_Pet", "Orleans_Pet.HelloState");
             feature.AddKnownType("Orleans_Pet.IHelloWorldGrain,Orleans_Pet", "Orleans_Pet.IHelloWorldGrain");
             feature.AddKnownType("System.Threading.Tasks.Task`1", "Task`1'1");
             feature.AddKnownType("System.Threading.Tasks.Task", "Task");
-            feature.AddKnownType("Orleans_Pet.HelloState,Orleans_Pet", "Orleans_Pet.HelloState");
+            feature.AddKnownType("Orleans_Pet.IMyStatelessWorker,Orleans_Pet", "Orleans_Pet.IMyStatelessWorker");
             feature.AddKnownType("Orleans_Pet.Pages.ErrorModel,Orleans_Pet", "Orleans_Pet.Pages.ErrorModel");
             feature.AddKnownType("Orleans_Pet.Pages.IndexModel,Orleans_Pet", "Orleans_Pet.Pages.IndexModel");
             feature.AddKnownType("Orleans_Pet.Pages.PrivacyModel,Orleans_Pet", "Orleans_Pet.Pages.PrivacyModel");

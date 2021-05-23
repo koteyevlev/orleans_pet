@@ -6,7 +6,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Orleans.Configuration;
 using Orleans.Hosting;
+using Orleans_Pet.CallFilter;
 
 namespace Orleans_Pet
 {
@@ -26,12 +28,20 @@ namespace Orleans_Pet
             .UseOrleans(builder =>
             {
                 builder.UseLocalhostClustering();
-                builder.UseAdoNetClustering(options =>
+                builder.AddMemoryGrainStorageAsDefault().AddMemoryGrainStorage("PubSubStore");
+                builder.Configure<ClusterOptions>(options =>
                 {
-                    options.Invariant = "Npgsql";
-                    options.ConnectionString = "postgresql://localhost:4556";
-
+                    options.ClusterId = "my-first-cluster";
+                    options.ServiceId = "my-first-service";
                 });
+                //builder.AddIncomingGrainCallFilter<ConsoleWritingIncomingCallFilter>();
+                //builder.AddOutgoingGrainCallFilter<ConsoleWritingOutgoingCallFilter>();
+                //builder.UseAdoNetClustering(options =>
+                //{
+                 //   options.Invariant = "Npgsql";
+                  //  options.ConnectionString = "postgres://postgres:root@localhost:5432/tg_bot";
+
+                //});
             });
     }
 }

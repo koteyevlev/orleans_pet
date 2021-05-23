@@ -22,7 +22,8 @@ namespace Orleans_Pet
         public async Task<IActionResult> Hello(string name)
         {
             var result = await _clusterClient.GetGrain<IHelloWorldGrain>("Stu").SayHelloAsync(name);
-            return Ok(result);
+            var random = await _clusterClient.GetGrain<IMyStatelessWorker>(0).ComputeNextNumberAsync();
+            return Ok($"{result} {random}");
         }
     }
 }
